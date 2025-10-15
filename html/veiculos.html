@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veículos Disponíveis | AutoElite Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">AUTOELITE</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="html/veiculos.html" class="active">Veículos</a></li>
+                <li><a href="html/sobre.html">Sobre Nós</a></li>
+                <li><a href="html/servicos.html">Serviços</a></li>
+                <li><a href="html/contato.html">Contato</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="html/contato.html" class="btn-nav">Agendar Test Drive</a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Nosso Catálogo de Veículos</h1>
+            <p>Explore nossa seleção exclusiva de veículos premium</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-wrapper">
+                <div class="filter-group">
+                    <label for="categoryFilter">Categoria</label>
+                    <select class="filter-select" id="categoryFilter">
+                        <option value="all">Todas as Categorias</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="esportivo">Esportivo</option>
+                        <option value="hatch">Hatch</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="priceFilter">Faixa de Preço</label>
+                    <select class="filter-select" id="priceFilter">
+                        <option value="all">Todas as Faixas</option>
+                        <option value="0-200k">Até R$ 200.000</option>
+                        <option value="200k-400k">R$ 200.000 - R$ 400.000</option>
+                        <option value="400k-600k">R$ 400.000 - R$ 600.000</option>
+                        <option value="600k+">Acima de R$ 600.000</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="yearFilter">Ano</label>
+                    <select class="filter-select" id="yearFilter">
+                        <option value="all">Todos os Anos</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021 ou anterior</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="conditionFilter">Condição</label>
+                    <select class="filter-select" id="conditionFilter">
+                        <option value="all">Todas</option>
+                        <option value="novo">Novo</option>
+                        <option value="seminovo">Seminovo</option>
+                    </select>
+                </div>
+
+                <div class="filter-actions">
+                    <button class="btn-filter" id="applyFilters">Aplicar Filtros</button>
+                    <button class="btn-clear" id="clearFilters">Limpar</button>
+                </div>
+            </div>
+
+            <div class="results-info">
+                <p id="resultsCount">Exibindo todos os veículos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog -->
+    <section class="catalog-section">
+        <div class="container">
+            <div class="vehicles-grid" id="catalogGrid">
+
+                <!-- Vehicle 1 -->
+                <div class="vehicle-card" data-category="esportivo" data-price="789900" data-year="2024"
+                    data-condition="novo">
+                    <div class="vehicle-image-placeholder">
+                        <div class="vehicle-badge new">Novo 2024</div>
+                        <span class="vehicle-image-text">BMW M4 Competition</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">BMW M4 Competition</h3>
+                        <p class="vehicle-specs">2024 | 0 km | Gasolina</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">510 cv</span>
+                            <span class="feature-item">0-100 em 3.9s</span>
+                            <span class="feature-item">Automático</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 789.900</div>
+                            <button class="btn-vehicle" onclick="openModal('BMW M4 Competition', 'R$ 789.900')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 2 -->
+                <div class="vehicle-card" data-category="suv" data-price="649000" data-year="2023"
+                    data-condition="seminovo">
+                    <div class="vehicle-image-placeholder">
+                        <div class="vehicle-badge popular">Mais Procurado</div>
+                        <span class="vehicle-image-text">Mercedes-Benz GLE 450</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Mercedes-Benz GLE 450</h3>
+                        <p class="vehicle-specs">2023 | 12.000 km | Gasolina</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">367 cv</span>
+                            <span class="feature-item">4MATIC</span>
+                            <span class="feature-item">Automático</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 649.000</div>
+                            <button class="btn-vehicle" onclick="openModal('Mercedes-Benz GLE 450', 'R$ 649.000')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3 -->
+                <div class="vehicle-card" data-category="sedan" data-price="389900" data-year="2023"
+                    data-condition="seminovo">
+                    <div class="vehicle-image-placeholder">
+                        <div class="vehicle-badge offer">Oferta Especial</div>
+                        <span class="vehicle-image-text">Audi A5 Sportback</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Audi A5 Sportback</h3>
+                        <p class="vehicle-specs">2023 | 8.500 km | Gasolina</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">249 cv</span>
+                            <span class="feature-item">Quattro</span>
+                            <span class="feature-item">Automático</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 389.900</div>
+                            <button class="btn-vehicle" onclick="openModal('Audi A5 Sportback', 'R$ 389.900')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 4 -->
+                <div class="vehicle-card" data-category="esportivo" data-price="899000" data-year="2022"
+                    data-condition="seminovo">
+                    <div class="vehicle-image-placeholder">
+                        <span class="vehicle-image-text">Porsche 911 Carrera</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Porsche 911 Carrera</h3>
+                        <p class="vehicle-specs">2022 | 15.000 km | Gasolina</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">385 cv</span>
+                            <span class="feature-item">0-100 em 4.0s</span>
+                            <span class="feature-item">PDK</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 899.000</div>
+                            <button class="btn-vehicle" onclick="openModal('Porsche 911 Carrera', 'R$ 899.000')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 5 -->
+                <div class="vehicle-card" data-category="suv" data-price="459000" data-year="2024"
+                    data-condition="novo">
+                    <div class="vehicle-image-placeholder">
+                        <div class="vehicle-badge new">Novo 2024</div>
+                        <span class="vehicle-image-text">BMW X5 M50i</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">BMW X5 M50i</h3>
+                        <p class="vehicle-specs">2024 | 0 km | Gasolina</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">530 cv</span>
+                            <span class="feature-item">xDrive</span>
+                            <span class="feature-item">Automático</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 459.000</div>
+                            <button class="btn-vehicle" onclick="openModal('BMW X5 M50i', 'R$ 459.000')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 6 -->
+                <div class="vehicle-card" data-category="sedan" data-price="285000" data-year="2023"
+                    data-condition="seminovo">
+                    <div class="vehicle-image-placeholder">
+                        <span class="vehicle-image-text">Mercedes-Benz C300</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Mercedes-Benz C300</h3>
+                        <p class="vehicle-specs">2023 | 18.000 km | Gasolina</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">258 cv</span>
+                            <span class="feature-item">Conforto</span>
+                            <span class="feature-item">Automático</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 285.000</div>
+                            <button class="btn-vehicle" onclick="openModal('Mercedes-Benz C300', 'R$ 285.000')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 7 -->
+                <div class="vehicle-card" data-category="hatch" data-price="189900" data-year="2024"
+                    data-condition="novo">
+                    <div class="vehicle-image-placeholder">
+                        <div class="vehicle-badge new">Novo 2024</div>
+                        <span class="vehicle-image-text">Audi A3 Sportback</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Audi A3 Sportback</h3>
+                        <p class="vehicle-specs">2024 | 0 km | Gasolina</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">150 cv</span>
+                            <span class="feature-item">Econômico</span>
+                            <span class="feature-item">Automático</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 189.900</div>
+                            <button class="btn-vehicle" onclick="openModal('Audi A3 Sportback', 'R$ 189.900')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 8 -->
+                <div class="vehicle-card" data-category="suv" data-price="359000" data-year="2023"
+                    data-condition="seminovo">
+                    <div class="vehicle-image-placeholder">
+                        <div class="vehicle-badge popular">Mais Procurado</div>
+                        <span class="vehicle-image-text">Volvo XC60 T8</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Volvo XC60 T8 Hybrid</h3>
+                        <p class="vehicle-specs">2023 | 22.000 km | Híbrido</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">455 cv</span>
+                            <span class="feature-item">AWD</span>
+                            <span class="feature-item">Automático</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 359.000</div>
+                            <button class="btn-vehicle" onclick="openModal('Volvo XC60 T8 Hybrid', 'R$ 359.000')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 9 -->
+                <div class="vehicle-card" data-category="esportivo" data-price="549000" data-year="2023"
+                    data-condition="seminovo">
+                    <div class="vehicle-image-placeholder">
+                        <span class="vehicle-image-text">Chevrolet Corvette C8</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Chevrolet Corvette C8</h3>
+                        <p class="vehicle-specs">2023 | 9.000 km | Gasolina</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">495 cv</span>
+                            <span class="feature-item">0-100 em 2.9s</span>
+                            <span class="feature-item">Automático</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 549.000</div>
+                            <button class="btn-vehicle" onclick="openModal('Chevrolet Corvette C8', 'R$ 549.000')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 10 -->
+                <div class="vehicle-card" data-category="sedan" data-price="449000" data-year="2024"
+                    data-condition="novo">
+                    <div class="vehicle-image-placeholder">
+                        <div class="vehicle-badge new">Novo 2024</div>
+                        <span class="vehicle-image-text">BMW Série 5 M Sport</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">BMW Série 5 M Sport</h3>
+                        <p class="vehicle-specs">2024 | 0 km | Gasolina</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">340 cv</span>
+                            <span class="feature-item">xDrive</span>
+                            <span class="feature-item">Automático</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 449.000</div>
+                            <button class="btn-vehicle" onclick="openModal('BMW Série 5 M Sport', 'R$ 449.000')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 11 -->
+                <div class="vehicle-card" data-category="hatch" data-price="159900" data-year="2023"
+                    data-condition="seminovo">
+                    <div class="vehicle-image-placeholder">
+                        <div class="vehicle-badge offer">Oferta Especial</div>
+                        <span class="vehicle-image-text">Volkswagen Golf GTI</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Volkswagen Golf GTI</h3>
+                        <p class="vehicle-specs">2023 | 14.000 km | Gasolina</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">230 cv</span>
+                            <span class="feature-item">Performance</span>
+                            <span class="feature-item">Automático</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 159.900</div>
+                            <button class="btn-vehicle" onclick="openModal('Volkswagen Golf GTI', 'R$ 159.900')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 12 -->
+                <div class="vehicle-card" data-category="suv" data-price="729000" data-year="2024"
+                    data-condition="novo">
+                    <div class="vehicle-image-placeholder">
+                        <div class="vehicle-badge new">Novo 2024</div>
+                        <span class="vehicle-image-text">Range Rover Sport</span>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Range Rover Sport</h3>
+                        <p class="vehicle-specs">2024 | 0 km | Gasolina</p>
+                        <div class="vehicle-features">
+                            <span class="feature-item">400 cv</span>
+                            <span class="feature-item">Off-road</span>
+                            <span class="feature-item">Automático</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <div class="vehicle-price">R$ 729.000</div>
+                            <button class="btn-vehicle" onclick="openModal('Range Rover Sport', 'R$ 729.000')">Ver
+                                Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="carModal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 id="modalTitle">Detalhes do Veículo</h2>
+            <p class="modal-price" id="modalPrice"></p>
+            <p class="modal-description">Este veículo passou por rigorosa inspeção e está pronto para ser seu. Entre em
+                contato conosco para agendar um test drive ou solicitar uma proposta personalizada.</p>
+            <div class="modal-actions">
+                <a href="html/contato.html" class="btn btn-primary">Solicitar Proposta</a>
+                <button onclick="closeModal()" class="btn btn-secondary">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">AUTOELITE</div>
+                    <p class="footer-description">Há mais de 15 anos oferecendo os melhores veículos premium com
+                        atendimento diferenciado e compromisso com a excelência.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/IkarusRK" class="social-link">Github</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="https://www.linkedin.com/in/daniel-reis-6ba189317/?trk=li_LOL_SPIN_global_careers_jobsgtm_conv_acq_july2022_spinv1"
+                            class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="html/veiculos.html">Veículos</a></li>
+                        <li><a href="html/sobre.html">Sobre Nós</a></li>
+                        <li><a href="html/servicos.html">Serviços</a></li>
+                        <li><a href="html/contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Serviços</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Financiamento</a></li>
+                        <li><a href="#">Avaliação</a></li>
+                        <li><a href="#">Test Drive</a></li>
+                        <li><a href="#">Garantia</a></li>
+                        <li><a href="#">Pós-Venda</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <ul class="footer-contact">
+                        <li><strong>Telefone:</strong> (71) 94002-8922</li>
+                        <li><strong>WhatsApp:</strong> (71) 98111-3728</li>
+                        <li><strong>Email:</strong> Ikarusreismax@gmail.com</li>
+                        <li><strong>Endereço:</strong> Av. Empresarial, 1234<br>Camaçari, BA - CEP 42800-000</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Horário de Atendimento</h4>
+                    <ul class="footer-hours">
+                        <li><strong>Segunda a Sexta:</strong> 08h - 18h</li>
+                        <li><strong>Sábado:</strong> 08h - 14h</li>
+                        <li><strong>Domingo:</strong> Fechado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoElite Premium. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
